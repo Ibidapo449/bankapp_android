@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class airtime extends StatefulWidget {
-  const airtime({super.key});
+  const airtime({key});
 
   @override
   State<airtime> createState() => _airtimeState();

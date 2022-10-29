@@ -136,45 +136,8 @@ class _ProfileState extends State<Profile> {
                     onTap: () {
                       Navigator.pushNamed(context, '/myaccount');
                     },
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.09,
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primaryContainer,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                SizedBox(
-                                    child: Icon(
-                                  Icons.person,
-                                  size: 30,
-                                  color: Theme.of(context).primaryColor,
-                                )),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Container(
-                                  child: Text(
-                                    'My Account',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                                child: Icon(
-                              Icons.forward,
-                              size: 30,
-                              color: Theme.of(context).primaryColor,
-                            )),
-                          ]),
-                    ),
+                    child: myContainer(
+                        child: myRow(icon: Icons.person, text: "Account")),
                   ),
                 ),
                 SizedBox(
@@ -185,45 +148,9 @@ class _ProfileState extends State<Profile> {
                     onTap: () {
                       Navigator.pushNamed(context, '/notifications');
                     },
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.09,
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primaryContainer,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                SizedBox(
-                                    child: Icon(
-                                  Icons.notifications,
-                                  size: 30,
-                                  color: Theme.of(context).primaryColor,
-                                )),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Container(
-                                  child: Text(
-                                    'Notifications',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                                child: Icon(
-                              Icons.forward,
-                              size: 30,
-                              color: Theme.of(context).primaryColor,
-                            )),
-                          ]),
-                    ),
+                    child: myContainer(
+                        child: myRow(
+                            icon: Icons.notifications, text: "Notifications")),
                   ),
                 ),
                 SizedBox(
@@ -232,98 +159,19 @@ class _ProfileState extends State<Profile> {
                 InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, '/theme');
-
-                    // context
-                    //     .read<Themeprovider>()
-                    //     .checktheme(Theme.of(context).scaffoldBackgroundColor);
-
-                    //context.read<Themeprovider>().checktogg();
                   },
                   child: Center(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.09,
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primaryContainer,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                SizedBox(
-                                    child: Icon(
-                                  Icons.settings,
-                                  size: 30,
-                                  color: Theme.of(context).primaryColor,
-                                )),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Container(
-                                  child: Text(
-                                    'Theme',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                                child: Icon(
-                              Icons.forward,
-                              size: 30,
-                              color: Theme.of(context).primaryColor,
-                            )),
-                          ]),
-                    ),
+                    child: myContainer(
+                        child: myRow(icon: Icons.settings, text: "Theme")),
                   ),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.015,
                 ),
                 Center(
-                  child: Container(
-                    height: MediaQuery.of(context).size.height * 0.09,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primaryContainer,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SizedBox(
-                                  child: Icon(
-                                Icons.question_mark_outlined,
-                                size: 30,
-                                color: Theme.of(context).primaryColor,
-                              )),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Container(
-                                child: Text(
-                                  'Help Center',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                              child: Icon(
-                            Icons.forward,
-                            size: 30,
-                            color: Theme.of(context).primaryColor,
-                          )),
-                        ]),
-                  ),
+                  child: myContainer(
+                      child: myRow(
+                          icon: Icons.question_mark, text: "Help a Center")),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.015,
@@ -335,55 +183,76 @@ class _ProfileState extends State<Profile> {
                           context, '/login', (route) => false);
                       context.read<checklogged>().deletelogged();
                     },
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.09,
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primaryContainer,
-                          borderRadius: BorderRadius.circular(10)),
+                    child: myContainer(
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              children: [
-                                SizedBox(
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.08,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.08,
-                                  child: Transform.rotate(
-                                      angle: 100 * math.pi / 100,
-                                      child: SvgPicture.asset(
-                                        'images/svg/log-out.svg',
-                                        color: Colors.red,
-                                      )),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Container(
-                                  child: Text(
-                                    'Log Out',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.red),
-                                  ),
-                                ),
-                              ],
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.08,
+                              width: MediaQuery.of(context).size.width * 0.08,
+                              child: Transform.rotate(
+                                  angle: 100 * math.pi / 100,
+                                  child: SvgPicture.asset(
+                                    'images/svg/log-out.svg',
+                                    color: Colors.red,
+                                  )),
                             ),
                             SizedBox(
-                                child: Icon(
+                              width: 10,
+                            ),
+                            Text(
+                              'Log Out',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.red),
+                            ),
+                            Spacer(),
+                            Icon(
                               Icons.forward,
                               size: 30,
                               color: Theme.of(context).primaryColor,
-                            )),
+                            ),
                           ]),
                     ),
                   ),
                 )
               ])),
         ));
+  }
+
+  Widget myContainer({required Widget child}) {
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.09,
+      width: MediaQuery.of(context).size.width * 0.9,
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.primaryContainer,
+          borderRadius: BorderRadius.circular(10)),
+      child: child,
+    );
+  }
+
+  Widget myRow({text, icon}) {
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+      Icon(
+        icon,
+        size: 30,
+        color: Theme.of(context).primaryColor,
+      ),
+      SizedBox(
+        width: 10,
+      ),
+      Text(
+        text,
+        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+      ),
+      Spacer(),
+      Icon(
+        Icons.forward,
+        size: 30,
+        color: Theme.of(context).primaryColor,
+      ),
+    ]);
   }
 }

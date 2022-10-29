@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 
 class Loadingwidget2 extends StatelessWidget {
-  const Loadingwidget2({super.key});
+  const Loadingwidget2({key});
   static show(BuildContext context) {
     return showDialog(
         context: context,

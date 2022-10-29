@@ -136,7 +136,8 @@ class _onBoardingState extends State<onBoarding> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25),
                               ),
-                              backgroundColor: Theme.of(context).primaryColor),
+                              // backgroundColor: Theme.of(context).primaryColor
+                              ),
                         )
                       : ElevatedButton(
                           onPressed: () {
@@ -149,7 +150,8 @@ class _onBoardingState extends State<onBoarding> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25),
                               ),
-                              backgroundColor: Theme.of(context).primaryColor),
+                              // backgroundColor: Theme.of(context).primaryColor
+                              ),
                         ),
                 ],
               ),

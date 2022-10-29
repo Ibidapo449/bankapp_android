@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class transfer extends StatefulWidget {
-  const transfer({super.key});
+  const transfer({key});
 
   @override
   State<transfer> createState() => _transferState();

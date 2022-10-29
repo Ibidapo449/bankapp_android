@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 
 class notification extends StatefulWidget {
-  const notification({super.key});
+  const notification({key});
 
   @override
   State<notification> createState() => _notificationState();

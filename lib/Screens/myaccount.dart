@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 
 class myaccount extends StatefulWidget {
-  const myaccount({super.key});
+  const myaccount({key});
 
   @override
   State<myaccount> createState() => _myaccountState();

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class quicksave extends StatefulWidget {
-  const quicksave({super.key});
+  const quicksave({key});
 
   @override
   State<quicksave> createState() => _quicksaveState();

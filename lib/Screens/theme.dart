@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 class themepage extends StatefulWidget {
-  const themepage({super.key});
+  const themepage({key});
 
   @override
   State<themepage> createState() => _themepageState();
